@@ -1,12 +1,12 @@
-def search (a, first: int, size: int, target: int):
+def search (a, first: int, size: int, target):
     """Search for a desired element in a list of elements
     starting at a a[first]
 
     Args:
-        a (int): the list to search
+        a: the list to search
         first (int): the list index to start searching
         size (int): the number of elements to search
-        target (int): the element to search for
+        target: the element to search for
 
     Returns:
         int: If target appears in the list, the index of the element
@@ -20,7 +20,8 @@ def search (a, first: int, size: int, target: int):
 
     # while there are more elements to search
     # and the target has not been found
-    while i < size and not found:
+    # and i plus first does not exceed the length of the list
+    while i < size and not found and (i + first < len(a)):
         # if the current element is the target
         if a[first + i] == target:
             # set found to True
